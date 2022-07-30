@@ -11,7 +11,7 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const router = useRouter();
-  const { signInWithEmailAndPassword } = useAuth();
+  const { signInWithEmailAndPassword, loginWithGoogle } = useAuth();
 
   const onSubmit = event => {
     setError(null)
@@ -69,6 +69,7 @@ export default function Home() {
            <FormGroup row>
             <Col>
               No account? <Link href="/sign_up">Create one</Link>
+              <button onClick={loginWithGoogle}> Login With Google </button>
             </Col>
           </FormGroup>
           </Form>
